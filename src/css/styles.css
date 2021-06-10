@@ -1,0 +1,33 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#ffee23;
+}
+
+#memory-game.grid{
+  display:flex;
+  flex-wrap:wrap;
+  width:400px;
+  height:300px;
+
+}
+img{
+  height:150px;
+  width:33%;
+  border:1px solid #ffffff;
+}
+#ui-game{
+  display: flex;
+  flex-wrap: wrap;
+}
+div.ui-items{
+display: block;
+width: 33%;
+height: 2em;
+}
+
+
