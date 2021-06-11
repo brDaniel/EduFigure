@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="src/js/cliente.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body{
             width: 500px;
@@ -74,6 +76,32 @@
         </div>
     </div>
 
+    <!--
+        modal for save game
+    -->
+
+   <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+     
+ 
+        <div class="w3-section w3-sand">
+          <p>quieres guardar tus puntos?</p>
+          <label><b>nombre del jugador</b></label>
+          <input id="Username"class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          
+          <button class="w3-button w3-block w3-light-blue w3-section w3-padding" type="button" onclick="saveGame()">save score</button>
+         
+        </div>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button id="restar" type="button" class="w3-button w3-light-blue" onclick="restar()">play again</button>
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small">back to menu <a href="menu.html">exit?</a></span>
+      </div>
+
+    </div>
+  </div>
+</div> 
     <script>
         var cartasArray = [1,2,3,4,5,6,1,2,3,4,5,6];
         var contadorVolteadas = 0;
@@ -107,9 +135,26 @@
             `;
         }
         
+        
         window.onload = function() {
             cargaCartas();
-            temporizador();
+            iniciarTemporizador();
+        };
+
+        function restar(){
+            contadorVolteadas = 0;
+            carta1 = '';
+            carta2 = '';
+            encontradas = 0;
+            faltantes = 6;
+            tiempo = 0;
+            temporizador=null ;
+            intentos = 0;
+            clic = false;
+             cargaCartas();
+            iniciarTemporizador();
+            document.getElementById('ganaste').style.display = 'none';
+            document.getElementById("id01").style.display="none";
         };
 
         function desordenarArrays(arrayX){
@@ -117,7 +162,7 @@
             return arrayReacomodado;
         }
 
-        function temporizador(){
+        function iniciarTemporizador(){
             temporizador = setInterval(() => {
                 tiempo++
                 document.getElementById('temporizador').innerHTML = tiempo;
@@ -170,6 +215,7 @@
                                     if(encontradas == 6){
                                         clearInterval(temporizador);
                                         document.getElementById('ganaste').style.display = 'block';
+                                        document.getElementById("id01").style.display="block";
                                     }
                                 }
                             }
