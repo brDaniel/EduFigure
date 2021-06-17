@@ -103,16 +103,16 @@
   </div>
 </div> 
     <script>
-        var cartasArray = [1,2,3,4,5,6,1,2,3,4,5,6];
-        var contadorVolteadas = 0;
-        var carta1 = '';
-        var carta2 = '';
-        var encontradas = 0;
-        var faltantes = 6;
-        var tiempo = 0;
-        var temporizador ;
-        var intentos = 0;
-        var clic = false;
+        let cartasArray = [1,2,3,4,5,6,1,2,3,4,5,6];
+        let contadorVolteadas = 0;
+        let carta1 = '';
+        let carta2 = '';
+        let encontradas = 0;
+        let faltantes = 6;
+        let tiempo = 0;
+        let temporizador ;
+        let intentos = 0;
+        let clic = false;
         function carta(x,y,w,h,imagenFrente,imagenAtras){
             this.x = x;
             this.y = y;
@@ -151,10 +151,14 @@
             temporizador=null ;
             intentos = 0;
             clic = false;
-             cargaCartas();
-            iniciarTemporizador();
             document.getElementById('ganaste').style.display = 'none';
             document.getElementById("id01").style.display="none";
+            document.getElementById('intentos').innerHTML=intentos;
+            document.getElementById('encontrados').innerHTML=encontradas;
+
+            cargaCartas();
+            iniciarTemporizador();
+
         };
 
         function desordenarArrays(arrayX){
@@ -208,6 +212,7 @@
                                 let imagenCarta = cartaX.getAttribute('carta');
                                 if(imagenCarta == carta1){
                                     cartaX.setAttribute("style", "display: none;");
+                                    alert(`encontradas${encontradas}`+.5);
                                     encontradas = encontradas + .5;
                                     faltantes = faltantes - .5;
                                     document.getElementById('encontrados').innerHTML = encontradas ;

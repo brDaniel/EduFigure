@@ -1,11 +1,15 @@
 <?php
-$data=$_POST["user"]."\t".$_POST["score"]."\t".$_POST["moves"]."<br>\n";
+$moves=$_POST["moves"];
+$score=$_POST["score"];
+$userName=$_POST["user"];
+	
+$data='{"name":"'.$userName.'","score":'.$score.',"moves":'.$moves."}\n";
+
 
 file_put_contents("highscore.txt",$data,FILE_APPEND);
 $highscore=file_get_contents("highscore.txt");
-$dataArray=implode("\n",$data);
+echo $data;
 
 //echo "listo.. se agrego: ".$data."<br>"
-echo $highscore;
 
 ?>

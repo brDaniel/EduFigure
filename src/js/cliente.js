@@ -3,7 +3,6 @@ function saveGame(){
 	let score=document.getElementById("encontrados").innerHTML;
 	let moves=document.getElementById("intentos").innerHTML;
 
-	alert(user+score+moves)
 	var req=new XMLHttpRequest();
 
   req.open('POST','src/app/service.php',true);
@@ -11,7 +10,7 @@ function saveGame(){
   req.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
 	
-	    document.getElementById("result").innerHTML = this.responseText;
+	    alert('exito se guardo su puntaje');
 
 	  }
 	}
