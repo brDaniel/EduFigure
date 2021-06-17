@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="src/css/menu.css">
+
+	<title>Menu</title>
+</head>
+<body>
+	 <!--
+    #MENU PAGE 
+  -->
+  <section id="menu-page" class="w3-modal ">
+    <div class="w3-section">
+      <header class="header">
+        <h1>ShapeE</h1>
+        <h2>learn with shapes!!</h2>
+      </header>
+    <div class="logo">
+      <div>
+        <svg>
+          <circle></circle>
+        </svg>
+      </div>
+    </div>
+    
+    <div id="get-started" class="btn btn-radius">
+      <a href="index.html">Start Game</a>
+    </div>
+  </div>
+    <footer class="w3-bottom ">
+     <div class="footer-nav-menu">
+       <nav>
+         <ul>
+           <li><a option-menu="setting" " class="item-nav"><i class="fa fa-cog"></i>setting</a></li>
+           <li><a option-menu="highscore" class="item-nav"><i class="fa fa-star"></i>High Score</a></li>
+           <li><a option-menu="themes" class="item-nav"><i class="fa fa-paint-brush"></i>themes</a></li>
+           
+         </ul>
+       </nav>
+     </div>
+    </footer>
+   </section>
+  
+<!--
+  #HIGH SCORE PAGE 
+-->
+  <section id="highscore-page" class="w3-modal menu">
+    
+    <header class="header">
+      <h1>High Score</h1>
+    </header>
+    <div id="highscore" class="container">
+     <table id="display-highscore">
+
+     </table>
+    </div>
+    <div id="back"class="btn btn-radius">
+      <a><i class="fa fa-angle-double-left"></i>back to menu</a>
+    </div>
+
+ </section>
+  
+<!-- 
+  #SETTINGS PAGE 
+-->
+  <section id="setting-page" class="w3-modal menu">
+    <header class="header">
+      <h1>Settings</h1>
+    </header>
+    <div class="container"></div> 
+    <div id="back"class="btn btn-radius">
+      <a><i class="fa fa-angle-double-left"></i>back to menu</a>
+    </div>
+  </section>
+  <script src="src/js/menu.js"></script>
+</body>
+</html>
